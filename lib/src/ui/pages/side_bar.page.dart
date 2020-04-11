@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:marco_leonardini/src/providers/page.provider.dart';
-import 'package:provider/provider.dart';
+
+import 'widgets/menu_tile.widget.dart';
 
 class SideBarPage extends StatefulWidget {
   @override
@@ -26,6 +26,7 @@ class _SideBarPageState extends State<SideBarPage> {
         Text(
           'Marco \nLeonardini',
           textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.white70),
         ),
         SizedBox(
           height: 20.0,
@@ -61,49 +62,6 @@ class _SideBarPageState extends State<SideBarPage> {
           icon: CupertinoIcons.mail_solid,
         ),
       ],
-    );
-  }
-}
-
-class MenuTile extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final int index;
-
-  const MenuTile({
-    Key key,
-    @required this.icon,
-    @required this.title,
-    @required this.index,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<PageProvider>(
-      builder: (context, pageProvider, child) {
-        return ListTile(
-          onTap: () {
-            pageProvider.itemSelected = index;
-          },
-          title: Text(
-            title,
-            style: TextStyle(color: Colors.white54),
-          ),
-          leading: Icon(
-            icon,
-            color: Colors.white54,
-          ),
-          trailing: pageProvider.itemSelected != index
-              ? null
-              : Container(
-                  width: 2.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    color: Colors.deepOrange,
-                  ),
-                ),
-        );
-      },
     );
   }
 }

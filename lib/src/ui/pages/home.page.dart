@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 200.0,
-                color: Colors.blueGrey,
+                color: Color(0xff222222),
                 child: SideBarPage(),
               ),
               Expanded(
