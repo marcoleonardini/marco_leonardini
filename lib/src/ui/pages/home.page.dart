@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'side_bar.page.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class HomePage extends StatelessWidget {
               Container(
                 width: 200.0,
                 color: Colors.blueGrey,
-                child: null,
+                child: SideBarPage(),
               ),
               Expanded(
                 child: Container(
