@@ -47,7 +47,7 @@ class BodyContent extends StatelessWidget {
     switch (index) {
       case 0:
         initialChild = HomeSubPage();
-        _initialOffset = Offset(0.0, 0.0);
+        _initialOffset = Offset(0.0, -MediaQuery.of(context).size.height);
         break;
       case 1:
         initialChild = Item2Widget();
