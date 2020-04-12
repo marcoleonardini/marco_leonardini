@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 class BorderCornerPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
     Paint paint = Paint();
     paint.color = Colors.deepOrange;
-    // paint.style = PaintingStyle.stroke;
     paint.strokeCap = StrokeCap.round;
     paint.strokeWidth = 3.0;
 

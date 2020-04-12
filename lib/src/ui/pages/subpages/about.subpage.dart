@@ -15,7 +15,6 @@ class AboutSubPage extends StatelessWidget {
           constraints: BoxConstraints.expand(),
           child: CustomPaint(
             painter: BorderCornerPainter(),
-            // child:
           ),
         ),
         Text('About Me'),
