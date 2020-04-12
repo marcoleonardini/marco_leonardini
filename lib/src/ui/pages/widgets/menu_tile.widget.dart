@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../constants/color.const.dart';
 import '../../../providers/page.provider.dart';
 
 class MenuTile extends StatelessWidget {
@@ -17,7 +18,7 @@ class MenuTile extends StatelessWidget {
 
   int _i = 0;
   Color _color = Colors.white38;
-  Color back = Color(0xff222222);
+  Color back = kMainColor;
   Duration _duration = Duration(milliseconds: 500);
 
   double _heightStart = 0;
@@ -67,14 +68,14 @@ class MenuTile extends StatelessWidget {
     _color = Colors.white38;
     _heightEnd = 0;
     _heightStart = 150;
-    back = Color(0xff222222);
+    back = kMainColor;
     _duration = Duration(milliseconds: 300);
     if (_i == index) {
       _color = Colors.white70;
       _heightStart = 0;
       _heightEnd = 150;
       _duration = Duration(milliseconds: 500);
-      back = Color(0xff171717).withOpacity(0.8);
+      back = kSelectedItem.withOpacity(0.8);
     }
   }
 }

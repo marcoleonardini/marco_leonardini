@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants/color.const.dart';
+
 class HomeSubPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(24.0),
       decoration: BoxDecoration(
-        color: Color(0xff222222).withOpacity(0.75),
+        color: kMainColor.withOpacity(0.75),
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Column(
