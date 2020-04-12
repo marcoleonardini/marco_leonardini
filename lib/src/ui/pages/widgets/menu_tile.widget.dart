@@ -3,65 +3,52 @@ import 'package:provider/provider.dart';
 
 import '../../../providers/page.provider.dart';
 
-class MenuTile extends StatefulWidget {
+class MenuTile extends StatelessWidget {
   final IconData icon;
   final String title;
   final int index;
 
-  const MenuTile({
+  MenuTile({
     Key key,
     @required this.icon,
     @required this.title,
     @required this.index,
   }) : super(key: key);
 
-  @override
-  _MenuTileState createState() => _MenuTileState();
-}
+  int _i = 0;
+  Color _color = Colors.white38;
+  Duration _duration = Duration(milliseconds: 500);
 
-class _MenuTileState extends State<MenuTile> {
-  int i = 0;
-  Color color = Colors.white38;
-  Duration d = Duration(milliseconds: 500);
-
-  double h = 0;
-  double hEnd = 0;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  double _heightStart = 0;
+  double _heightEnd = 0;
 
   @override
   Widget build(BuildContext context) {
-    i = Provider.of<PageProvider>(context).itemSelected;
+    _i = Provider.of<PageProvider>(context).itemSelected;
 
     calculatesValues();
     return ListTile(
       onTap: () {
-        h = 0;
-        Provider.of<PageProvider>(context, listen: false).itemSelected =
-            widget.index;
+        Provider.of<PageProvider>(context, listen: false).itemSelected = index;
       },
       title: Text(
-        widget.title,
+        title,
         style: TextStyle(
-          color: color,
+          color: _color,
         ),
       ),
       leading: Icon(
-        widget.icon,
-        color: color,
+        icon,
+        color: _color,
       ),
       trailing: TweenAnimationBuilder(
-          tween: Tween<double>(begin: h, end: hEnd),
-          duration: d,
+          tween: Tween<double>(begin: _heightStart, end: _heightEnd),
+          duration: _duration,
           curve: Curves.easeIn,
-          builder: (context, double c, child) {
+          builder: (context, double heightValue, child) {
             return Container(
               width: 2.0,
-              height: c,
+              height: heightValue,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.0),
                 color: Colors.deepOrange,
@@ -72,18 +59,15 @@ class _MenuTileState extends State<MenuTile> {
   }
 
   void calculatesValues() {
-    if (i == widget.index) {
-      color = Colors.white70;
-      h = 0;
-      hEnd = 150;
-      d = Duration(milliseconds: 500);
-      setState(() {});
-    } else {
-      color = Colors.white38;
-      hEnd = 0;
-      h = 150;
-      d = Duration(milliseconds: 250);
-      // setState(() {});
+    _color = Colors.white38;
+    _heightEnd = 0;
+    _heightStart = 150;
+    _duration = Duration(milliseconds: 300);
+    if (_i == index) {
+      _color = Colors.white70;
+      _heightStart = 0;
+      _heightEnd = 150;
+      _duration = Duration(milliseconds: 500);
     }
   }
 }

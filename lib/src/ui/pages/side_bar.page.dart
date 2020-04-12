@@ -9,6 +9,9 @@ class SideBarPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        SizedBox(
+          height: 20.0,
+        ),
         CircleAvatar(
           child: FlutterLogo(
             size: 48.0,
@@ -56,6 +59,13 @@ class SideBarPage extends StatelessWidget {
           title: 'Contact',
           icon: CupertinoIcons.mail_solid,
         ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Text(
+          'Leo v0.0.1',
+          style: TextStyle(color: Colors.white54, fontSize: 8.0),
+        )
       ],
     );
   }
