@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/page.provider.dart';
+import '../subpages/about.subpage.dart';
 import '../subpages/home.subpage.dart';
 import 'custom_transition.widget.dart';
 import 'item.widget.dart';
@@ -50,7 +51,7 @@ class BodyContent extends StatelessWidget {
         _initialOffset = Offset(0.0, -MediaQuery.of(context).size.height);
         break;
       case 1:
-        initialChild = Item2Widget();
+        initialChild = AboutSubPage();
         axisDirection = AxisDirection.right;
         _initialOffset = Offset(MediaQuery.of(context).size.width, 0.0);
         break;

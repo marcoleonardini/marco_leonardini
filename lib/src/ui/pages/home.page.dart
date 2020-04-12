@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:marco_leonardini/src/constants/color.const.dart';
 
 import 'side_bar.page.dart';
 import 'widgets/body_content.widget.dart';
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Container(
-                  color: Color(0xff222222),
+                  color: kMainColor,
                   width: 200.0,
                   child: SideBarPage(),
                 ),
@@ -31,7 +32,7 @@ class HomePage extends StatelessWidget {
       return SafeArea(
         child: Scaffold(
           drawer: Container(
-            color: Color(0xff222222),
+            color: kMainColor,
             width: 200.0,
             child: SideBarPage(),
           ),
