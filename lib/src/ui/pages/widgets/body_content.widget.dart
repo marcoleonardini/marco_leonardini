@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/page.provider.dart';
+import '../subpages/home.subpage.dart';
 import 'custom_transition.widget.dart';
 import 'item.widget.dart';
 
@@ -11,7 +12,9 @@ class BodyContent extends StatelessWidget {
   }) : super(key: key);
 
   Widget initialChild = ItemWidget();
-  Widget out = Container();
+  Widget disapearingChild = Container();
+  AxisDirection axisDirection = AxisDirection.down;
+  Offset _initialOffset = Offset(0.0, 0.0);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,9 @@ class BodyContent extends StatelessWidget {
           return CustomTransitionWidget(
             key: GlobalKey(),
             child: getIncoming(context, pageProvider.itemSelected),
-            child2: out,
+            child2: disapearingChild,
+            axisDirection: axisDirection,
+            initialOffset: _initialOffset,
           );
         },
       ),
@@ -38,22 +43,32 @@ class BodyContent extends StatelessWidget {
   }
 
   Widget getIncoming(BuildContext context, int index) {
-    out = initialChild;
+    disapearingChild = initialChild;
     switch (index) {
       case 0:
-        initialChild = ItemWidget();
+        initialChild = HomeSubPage();
+        _initialOffset = Offset(0.0, 0.0);
         break;
       case 1:
         initialChild = Item2Widget();
+        axisDirection = AxisDirection.right;
+        _initialOffset = Offset(MediaQuery.of(context).size.width, 0.0);
         break;
       case 2:
         initialChild = Item3Widget();
+        axisDirection = AxisDirection.down;
+        _initialOffset = Offset(0.0, MediaQuery.of(context).size.height);
+
         break;
       case 3:
         initialChild = Item4Widget();
+        axisDirection = AxisDirection.up;
+        _initialOffset = Offset(0.0, -MediaQuery.of(context).size.height);
         break;
       case 4:
         initialChild = Item5Widget();
+        axisDirection = AxisDirection.right;
+        _initialOffset = Offset(MediaQuery.of(context).size.width, 0.0);
         break;
     }
     return initialChild;

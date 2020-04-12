@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 class CustomTransitionWidget extends StatefulWidget {
   final Widget child;
   final Widget child2;
-
+  final AxisDirection axisDirection;
+  final Offset initialOffset;
   CustomTransitionWidget({
     Key key,
     this.child,
     this.child2,
+    this.initialOffset,
+    this.axisDirection = AxisDirection.up,
   }) : super(key: key);
   @override
   _CustomTransitionWidgetState createState() => _CustomTransitionWidgetState();
@@ -28,7 +31,7 @@ class _CustomTransitionWidgetState extends State<CustomTransitionWidget>
       duration: Duration(milliseconds: 500),
     );
 
-    _animation = Tween<Offset>(begin: Offset(-150, -150), end: Offset(0, 0))
+    _animation = Tween<Offset>(begin: widget.initialOffset, end: Offset(0, 0))
         .animate(_animationController);
 
     _animation2 =
