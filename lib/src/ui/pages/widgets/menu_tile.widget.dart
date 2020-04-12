@@ -17,6 +17,7 @@ class MenuTile extends StatelessWidget {
 
   int _i = 0;
   Color _color = Colors.white38;
+  Color back = Color(0xff222222);
   Duration _duration = Duration(milliseconds: 500);
 
   double _heightStart = 0;
@@ -27,34 +28,38 @@ class MenuTile extends StatelessWidget {
     _i = Provider.of<PageProvider>(context).itemSelected;
 
     calculatesValues();
-    return ListTile(
-      onTap: () {
-        Provider.of<PageProvider>(context, listen: false).itemSelected = index;
-      },
-      title: Text(
-        title,
-        style: TextStyle(
+    return Container(
+      color: back,
+      child: ListTile(
+        onTap: () {
+          Provider.of<PageProvider>(context, listen: false).itemSelected =
+              index;
+        },
+        title: Text(
+          title,
+          style: TextStyle(
+            color: _color,
+          ),
+        ),
+        leading: Icon(
+          icon,
           color: _color,
         ),
+        trailing: TweenAnimationBuilder(
+            tween: Tween<double>(begin: _heightStart, end: _heightEnd),
+            duration: _duration,
+            curve: Curves.easeIn,
+            builder: (context, double heightValue, child) {
+              return Container(
+                width: 2.0,
+                height: heightValue,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: Colors.deepOrange,
+                ),
+              );
+            }),
       ),
-      leading: Icon(
-        icon,
-        color: _color,
-      ),
-      trailing: TweenAnimationBuilder(
-          tween: Tween<double>(begin: _heightStart, end: _heightEnd),
-          duration: _duration,
-          curve: Curves.easeIn,
-          builder: (context, double heightValue, child) {
-            return Container(
-              width: 2.0,
-              height: heightValue,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.0),
-                color: Colors.deepOrange,
-              ),
-            );
-          }),
     );
   }
 
@@ -62,12 +67,14 @@ class MenuTile extends StatelessWidget {
     _color = Colors.white38;
     _heightEnd = 0;
     _heightStart = 150;
+    back = Color(0xff222222);
     _duration = Duration(milliseconds: 300);
     if (_i == index) {
       _color = Colors.white70;
       _heightStart = 0;
       _heightEnd = 150;
       _duration = Duration(milliseconds: 500);
+      back = Color(0xff171717).withOpacity(0.8);
     }
   }
 }
