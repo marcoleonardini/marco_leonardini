@@ -3,12 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'widgets/menu_tile.widget.dart';
 
-class SideBarPage extends StatefulWidget {
-  @override
-  _SideBarPageState createState() => _SideBarPageState();
-}
-
-class _SideBarPageState extends State<SideBarPage> {
+class SideBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
