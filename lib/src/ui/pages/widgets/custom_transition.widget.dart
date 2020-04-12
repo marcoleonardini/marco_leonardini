@@ -25,7 +25,7 @@ class _CustomTransitionWidgetState extends State<CustomTransitionWidget>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: Duration(milliseconds: 500),
     );
 
     _animation = Tween<Offset>(begin: Offset(-150, -150), end: Offset(0, 0))
@@ -43,13 +43,14 @@ class _CustomTransitionWidgetState extends State<CustomTransitionWidget>
 
   @override
   void dispose() {
-    super.dispose();
     _animationController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: <Widget>[
         Transform.translate(
           offset: _animation.value,

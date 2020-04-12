@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:marco_leonardini/src/providers/page.provider.dart';
-import 'package:marco_leonardini/src/ui/pages/widgets/custom_transition.widget.dart';
 import 'package:provider/provider.dart';
 
+import '../../../providers/page.provider.dart';
+import 'custom_transition.widget.dart';
 import 'item.widget.dart';
 
 class BodyContent extends StatelessWidget {
@@ -27,15 +27,10 @@ class BodyContent extends StatelessWidget {
       constraints: BoxConstraints.expand(),
       child: Consumer(
         builder: (context, PageProvider pageProvider, child) {
-          return Stack(
-            alignment: Alignment.center,
-            children: <Widget>[
-              CustomTransitionWidget(
-                key: GlobalKey(),
-                child: getIncoming(context, pageProvider.itemSelected),
-                child2: out,
-              ),
-            ],
+          return CustomTransitionWidget(
+            key: GlobalKey(),
+            child: getIncoming(context, pageProvider.itemSelected),
+            child2: out,
           );
         },
       ),
