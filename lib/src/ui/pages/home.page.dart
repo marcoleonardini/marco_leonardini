@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'side_bar.page.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,7 +9,24 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         body: Container(
           constraints: BoxConstraints.expand(),
-          child: null,
+          child: Row(
+            children: <Widget>[
+              Container(
+                width: 200.0,
+                color: Color(0xff222222),
+                child: SideBarPage(),
+              ),
+              Expanded(
+                child: Container(
+                  constraints: BoxConstraints.expand(),
+                  child: Image.network(
+                    'https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=lauren-mancke-aOC7TSLb1o8-unsplash.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
