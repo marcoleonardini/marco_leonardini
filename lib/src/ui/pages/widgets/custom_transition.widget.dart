@@ -28,16 +28,25 @@ class _CustomTransitionWidgetState extends State<CustomTransitionWidget>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: Duration(milliseconds: 750),
     );
 
-    _animation = Tween<Offset>(begin: widget.initialOffset, end: Offset(0, 0))
-        .animate(_animationController);
+    _animation =
+        Tween<Offset>(begin: widget.initialOffset, end: Offset(0, 0)).animate(
+      CurvedAnimation(
+        curve: Curves.easeOutQuint,
+        parent: _animationController,
+      ),
+    );
 
-    _animation2 =
-        Tween<double>(begin: 1.0, end: 0.0).animate(_animationController);
+    _animation2 = Tween<double>(begin: 1.0, end: 0.0).animate(
+      CurvedAnimation(
+        curve: Curves.fastOutSlowIn,
+        parent: _animationController,
+      ),
+    );
 
-    _animation.addListener(() {
+    _animationController.addListener(() {
       setState(() {});
     });
 

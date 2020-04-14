@@ -1,0 +1,2 @@
+String kPersonalDesc =
+    "Marco Leonardini es Ing. de Sistemas con 6 años de experiencia en el área de desarrollo Web y Móvil,  organizador principal de Flutter Devs Bolivia y miembro de GDG La Paz, con estas comunidades promueve y participa en diferentes eventos y activiades, difundiendo nuevas tecnologías y conceptos en el área de desarrollo de software. Es co fundador de AuroraSoft, empresa dedicada a la creación de soluciones inteligentes mediante la aplicación de tecnologías modernas.";
