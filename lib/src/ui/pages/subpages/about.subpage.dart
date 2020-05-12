@@ -12,7 +12,7 @@ class AboutSubPage extends StatelessWidget {
         Container(
           margin: EdgeInsets.all(32.0),
           padding: EdgeInsets.all(12.0),
-          color: kMainColor.withOpacity(0.975),
+          color: AppColors.mainColor.withOpacity(0.975),
           constraints: BoxConstraints.expand(),
           child: CustomPaint(
             painter: BorderCornerPainter(),

@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Container(
-                  color: kMainColor,
+                  color: AppColors.mainColor,
                   width: 200.0,
                   child: SideBarPage(),
                 ),
@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
       return SafeArea(
         child: Scaffold(
           drawer: Container(
-            color: kMainColor,
+            color: AppColors.mainColor,
             width: 200.0,
             child: SideBarPage(),
           ),

@@ -18,7 +18,7 @@ class MenuTile extends StatelessWidget {
 
   int _i = 0;
   Color _color = Colors.white38;
-  Color back = kMainColor;
+  Color back = AppColors.mainColor;
   Duration _duration = Duration(milliseconds: 500);
 
   double _heightStart = 0;
@@ -56,7 +56,7 @@ class MenuTile extends StatelessWidget {
                 height: heightValue,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.deepOrange,
+                  color: AppColors.orange,
                 ),
               );
             }),
@@ -68,14 +68,14 @@ class MenuTile extends StatelessWidget {
     _color = Colors.white38;
     _heightEnd = 0;
     _heightStart = 150;
-    back = kMainColor;
+    back = AppColors.mainColor;
     _duration = Duration(milliseconds: 300);
     if (_i == index) {
       _color = Colors.white70;
       _heightStart = 0;
       _heightEnd = 150;
       _duration = Duration(milliseconds: 500);
-      back = kSelectedItem.withOpacity(0.8);
+      back = AppColors.selectedItem.withOpacity(0.8);
     }
   }
 }
