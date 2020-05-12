@@ -6,8 +6,8 @@ import 'widgets/menu_tile.widget.dart';
 class SideBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return ListView(
+      // mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         SizedBox(
           height: 20.0,
@@ -64,6 +64,7 @@ class SideBarPage extends StatelessWidget {
         ),
         Text(
           'Leo v0.0.1',
+          textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white54, fontSize: 8.0),
         )
       ],

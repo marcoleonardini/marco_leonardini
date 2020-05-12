@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marco_leonardini/src/constants/string.const.dart';
+import 'package:marco_leonardini/src/ui/pages/widgets/TextTitle.widget.dart';
 
 import '../../../constants/color.const.dart';
 import '../widgets/border_corner.painter.dart';
@@ -22,11 +23,12 @@ class AboutSubPage extends StatelessWidget {
           margin: EdgeInsets.all(32.0),
           padding: EdgeInsets.all(24.0),
           constraints: BoxConstraints.expand(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: ListView(
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
                 'About Me',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 48.0,
@@ -61,7 +63,59 @@ class AboutSubPage extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
+              TextTitle(
+                title: 'Services',
+              ),
+              SizedBox(
+                height: 24.0,
+              ),
+              Container(
+                height: 150.0,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Column(
+                        children: <Widget>[
+                          Icon(Icons.phone_iphone,
+                              color: Colors.white24, size: 76.0),
+                          TextStyleChild(title: 'Mobile App'),
+                          Text(
+                            'Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: <Widget>[
+                          Icon(Icons.phone_android,
+                              color: Colors.white24, size: 76.0),
+                          TextStyleChild(title: 'Mobile App'),
+                          Text(
+                            'Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: <Widget>[
+                          Icon(Icons.phone_android,
+                              color: Colors.white24, size: 76.0),
+                          TextStyleChild(title: 'Mobile App'),
+                          Text(
+                            'Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 24.0,
+              ),
             ],
           ),
         ),
