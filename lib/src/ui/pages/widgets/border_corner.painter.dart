@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:marco_leonardini/src/constants/color.const.dart';
 
 class BorderCornerPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint();
-    paint.color = Colors.deepOrange;
+    paint.color = AppColors.orange;
     paint.strokeCap = StrokeCap.round;
     paint.strokeWidth = 3.0;
 

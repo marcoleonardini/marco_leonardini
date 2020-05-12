@@ -8,7 +8,7 @@ class HomeSubPage extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(24.0),
       decoration: BoxDecoration(
-        color: kMainColor.withOpacity(0.75),
+        color: AppColors.mainColor.withOpacity(0.75),
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Column(
