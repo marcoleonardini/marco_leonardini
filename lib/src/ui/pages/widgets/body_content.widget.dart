@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marco_leonardini/src/ui/pages/subpages/resume.subpage.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/page.provider.dart';
@@ -56,7 +57,7 @@ class BodyContent extends StatelessWidget {
         _initialOffset = Offset(MediaQuery.of(context).size.width, 0.0);
         break;
       case 2:
-        initialChild = Item3Widget();
+        initialChild = ResumeSubPage();
         axisDirection = AxisDirection.down;
         _initialOffset = Offset(0.0, MediaQuery.of(context).size.height);
 
