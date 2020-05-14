@@ -6,10 +6,10 @@ class HomeSubPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(24.0),
+      padding: EdgeInsets.all(48.0),
       decoration: BoxDecoration(
         color: AppColors.mainColor.withOpacity(0.75),
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.circular(12.0),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -18,7 +18,7 @@ class HomeSubPage extends StatelessWidget {
             'Marco Leonardini',
             style: TextStyle(
               color: Colors.deepOrange,
-              fontSize: 36.0,
+              fontSize: 40.0,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -29,7 +29,7 @@ class HomeSubPage extends StatelessWidget {
             'Mobile App Developer',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18.0,
+              fontSize: 20.0,
               fontWeight: FontWeight.w400,
             ),
           ),
