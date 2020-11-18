@@ -28,7 +28,7 @@ class ResumeSubPage extends StatelessWidget {
                 style: TextStyle(fontSize: 36.0, color: Colors.white70),
               ),
               Image.asset(
-                'logo.png',
+                'assets/logo.png',
                 height: 200.0,
                 fit: BoxFit.contain,
               ),
