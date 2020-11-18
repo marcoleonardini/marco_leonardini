@@ -30,7 +30,7 @@ class AboutSubPage extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               HeadSection(),
-              ServicesSection(),
+              // ServicesSection(),
               SizedBox(
                 height: 24.0,
               ),
