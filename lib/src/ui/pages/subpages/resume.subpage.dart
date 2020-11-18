@@ -20,9 +20,19 @@ class ResumeSubPage extends StatelessWidget {
           margin: EdgeInsets.all(32.0),
           padding: EdgeInsets.all(24.0),
           constraints: BoxConstraints.expand(),
-          child: ListView(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[],
+          child: Column(
+            children: [
+              Text(
+                'Flutter Vikings',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 36.0, color: Colors.white70),
+              ),
+              Image.asset(
+                'logo.png',
+                height: 200.0,
+                fit: BoxFit.contain,
+              ),
+            ],
           ),
         ),
       ],

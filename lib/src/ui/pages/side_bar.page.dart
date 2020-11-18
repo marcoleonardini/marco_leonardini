@@ -47,18 +47,18 @@ class SideBarPage extends StatelessWidget {
           title: 'Resume',
           icon: CupertinoIcons.book_solid,
         ),
-        Divider(),
-        MenuTile(
-          index: 3,
-          icon: CupertinoIcons.mail_solid,
-          title: 'Contact Me',
-        ),
-        Divider(),
-        MenuTile(
-          index: 4,
-          title: 'Contact',
-          icon: CupertinoIcons.mail_solid,
-        ),
+        // Divider(),
+        // MenuTile(
+        //   index: 3,
+        //   icon: CupertinoIcons.mail_solid,
+        //   title: 'Contact Me',
+        // ),
+        // Divider(),
+        // MenuTile(
+        //   index: 4,
+        //   title: 'Contact',
+        //   icon: CupertinoIcons.mail_solid,
+        // ),
         SizedBox(
           height: 10.0,
         ),
